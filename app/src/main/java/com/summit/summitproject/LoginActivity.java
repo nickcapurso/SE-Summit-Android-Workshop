@@ -86,15 +86,15 @@ public class LoginActivity extends AppCompatActivity {
         username.addTextChangedListener(textWatcher);
         password.addTextChangedListener(textWatcher);
 
+        final String inputtedUsername = username.getText().toString();
+        final String inputtedPassword = password.getText().toString();
+
         signIn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Store user credentials in private storage if "Remember Me" was checked
                 if (rememberMe.isChecked()) {
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString(PREF_USERNAME, username.getText().toString());
-                    editor.putString(PREF_PASSWORD, password.getText().toString());
-                    editor.apply();
+                    saveUserCredentials();
                 }
 
                 // Don't allow user input while logging in & show the progress bar
@@ -102,37 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                 progress.setVisibility(View.VISIBLE);
 
                 // Instantiate the login manager, passing the username, password, and result listener
-                LoginManager loginManager = new LoginManager(
-                        username.getText().toString(),
-                        password.getText().toString(),
-                        new LoginListener() {
-                            @Override
-                            public void onLoginSuccess(String name, String cardNum, ArrayList<Transaction> transactions) {
-                                // Allow user input (eg. if the user returns to this screen) and
-                                // hide the progress bar again
-                                setAllEnabled(true);
-                                progress.setVisibility(View.INVISIBLE);
-
-                                // Start the SummaryActivity and also pass the user's name,
-                                // card number, and list of transactions in the launch intent.
-                                Intent intent = new Intent(LoginActivity.this, SummaryActivity.class);
-                                intent.putExtra(SummaryActivity.KEY_NAME, name);
-                                intent.putExtra(SummaryActivity.KEY_CARD_NUM, cardNum);
-                                intent.putExtra(SummaryActivity.KEY_TRANSACTIONS, transactions);
-                                startActivity(intent);
-                            }
-
-                            @Override
-                            public void onLoginError(Exception exception) {
-                                // Allow user input (eg. if the user returns to this screen) and
-                                // hide the progress bar again
-                                setAllEnabled(true);
-                                progress.setVisibility(View.INVISIBLE);
-
-                                Toast.makeText(LoginActivity.this, "Failed to login", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                );
+                LoginManager loginManager = new LoginManager(inputtedUsername, inputtedPassword, loginListener);
 
                 // Kick off the login network call
                 loginManager.execute();
@@ -145,12 +115,29 @@ public class LoginActivity extends AppCompatActivity {
                 // If "Remember Me" was previously checked and the user no longer wants their
                 // credentials remembered, clear the credentials from storage.
                 if (!isChecked) {
-                    username.setText("");
-                    password.setText("");
-                    sharedPreferences.edit().clear().apply();
+                    clearUserCredentials();
                 }
             }
         });
+    }
+
+    /**
+     * Save the username nad password to local storage.
+     */
+    private void saveUserCredentials() {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(PREF_USERNAME, username.getText().toString());
+        editor.putString(PREF_PASSWORD, password.getText().toString());
+        editor.apply();
+    }
+
+    /**
+     * Clear the username and password from local storage.
+     */
+    private void clearUserCredentials() {
+        username.setText("");
+        password.setText("");
+        sharedPreferences.edit().clear().apply();
     }
 
     /**
@@ -171,6 +158,35 @@ public class LoginActivity extends AppCompatActivity {
             String usernameText = username.getText().toString().trim();
             String passwordText = password.getText().toString().trim();
             signIn.setEnabled(usernameText.length() > 0 && passwordText.length() > 0);
+        }
+    };
+
+    private LoginListener loginListener = new LoginListener() {
+        @Override
+        public void onLoginSuccess(String name, String cardNum, ArrayList<Transaction> transactions) {
+            // Allow user input (e.g. if the user returns to this screen) and
+            // hide the progress bar again
+            setAllEnabled(true);
+            progress.setVisibility(View.INVISIBLE);
+
+            // Start the SummaryActivity and also pass the user's name,
+            // card number, and list of transactions in the launch intent.
+            Intent intent = new Intent(LoginActivity.this, SummaryActivity.class);
+            intent.putExtra(SummaryActivity.KEY_NAME, name);
+            intent.putExtra(SummaryActivity.KEY_CARD_NUM, cardNum);
+            intent.putExtra(SummaryActivity.KEY_TRANSACTIONS, transactions);
+            startActivity(intent);
+
+        }
+
+        @Override
+        public void onLoginError(Exception exception) {
+            // Allow user input (eg. if the user returns to this screen) and
+            // hide the progress bar again
+            setAllEnabled(true);
+            progress.setVisibility(View.INVISIBLE);
+
+            Toast.makeText(LoginActivity.this, "Failed to login", Toast.LENGTH_LONG).show();
         }
     };
 

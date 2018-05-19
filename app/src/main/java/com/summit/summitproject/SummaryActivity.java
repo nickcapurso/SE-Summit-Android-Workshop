@@ -40,6 +40,8 @@ public class SummaryActivity extends AppCompatActivity implements TransactionAda
      */
     public static final String KEY_TRANSACTIONS = "TRANSACTIONS";
 
+    // Data passed in via the Intent
+
     private String name;
 
     private String cardNum;

@@ -32,29 +32,4 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
-
-//    Unused dependencies, but just here in case we need them
-
-//    implementation 'com.squareup.picasso:picasso:2.71828'
-//    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-//    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-//
-//    testImplementation 'junit:junit:4.12'
-//    testImplementation "org.mockito:mockito-core:2.15.0"
-//    testImplementation "org.hamcrest:hamcrest-library:1.3"
-//
-//    androidTestImplementation "com.android.support:multidex:1.0.3"
-//    androidTestImplementation('com.github.tomakehurst:wiremock:2.2.2') {
-//        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
-//        exclude group: 'org.ow2.asm', module: 'asm'
-//        exclude group: 'org.json', module: 'json'
-//        exclude group: 'org.apache.commons', module: 'commons-collections4'
-//        exclude group: 'org.xmlunit', module: 'xmlunit-core'
-//        exclude group: 'org.xmlunit', module: 'xmlunit-legacy'
-//        exclude group: 'org.antlr', module: 'antlr4-runtime'
-//        exclude group: 'com.jayway.jsonpath', module: 'json-path'
-//    }
-//    androidTestImplementation 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }

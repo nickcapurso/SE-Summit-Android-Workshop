@@ -72,7 +72,7 @@ public class LoginManager extends AsyncTask<Void, Void, String> {
         // Build a GET request for the URL we want to hit
         Request request = new Request.Builder()
                 .get()
-                .url("http://www.mocky.io/v2/5af71cdb300000ab00b72d5e")
+                .url("http://www.mocky.io/v2/5b0074643100006f0076df40")
                 .build();
         try {
             // Execute the network call and assign the response
@@ -96,8 +96,12 @@ public class LoginManager extends AsyncTask<Void, Void, String> {
      *    "transactions":
      *    [
      *        {
-     *        "merchant":"Starbucks",
-     *        "amount":"$1.00"
+     *          "merchant":"Starbucks",
+     *          "amount":"$1.40"
+     *        },
+     *        {
+     *          "merchant":"Macy's",
+     *          "amount":"$35.00"
      *        },
      *
      *        // ...
