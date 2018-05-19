@@ -1,8 +1,8 @@
-package com.summit.summitproject.login;
+package com.summit.summitproject.prebuilt.login;
 
 import android.os.AsyncTask;
 
-import com.summit.summitproject.model.Transaction;
+import com.summit.summitproject.prebuilt.model.Transaction;
 
 import org.json.JSONArray;
 import org.json.JSONException;

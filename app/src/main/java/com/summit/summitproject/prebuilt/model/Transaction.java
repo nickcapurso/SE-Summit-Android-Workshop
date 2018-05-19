@@ -1,4 +1,4 @@
-package com.summit.summitproject.model;
+package com.summit.summitproject.prebuilt.model;
 
 import java.io.Serializable;
 
