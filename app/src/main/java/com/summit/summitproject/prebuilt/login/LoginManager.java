@@ -59,9 +59,6 @@ public class LoginManager extends AsyncTask<Void, Void, String> {
      */
     @Override
     protected String doInBackground(Void... voids) {
-        // Simulate a slow network
-        sleep(2000);
-
         // Prepare logging for the request / response so you can see them in Logcat
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -72,7 +69,7 @@ public class LoginManager extends AsyncTask<Void, Void, String> {
         // Build a GET request for the URL we want to hit
         Request request = new Request.Builder()
                 .get()
-                .url("http://www.mocky.io/v2/5b0074643100006f0076df40")
+                .url("http://www.mocky.io/v2/5b0074643100006f0076df40?mocky-delay=2500ms")
                 .build();
         try {
             // Execute the network call and assign the response
