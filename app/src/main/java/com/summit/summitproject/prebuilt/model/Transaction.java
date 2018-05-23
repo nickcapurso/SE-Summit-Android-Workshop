@@ -24,4 +24,9 @@ public class Transaction implements Serializable {
         return amount;
     }
 
+    @Override
+    public String toString() {
+        return "Merchant: " + merchant + ", Amount: " + amount; 
+    }
+
 }
