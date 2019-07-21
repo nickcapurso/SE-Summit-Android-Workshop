@@ -1,7 +1,7 @@
 package com.summit.summitproject;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.summit.summitproject.prebuilt.login.LoginManager;
 
