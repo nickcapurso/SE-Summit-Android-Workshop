@@ -13,3 +13,7 @@ The resulting app will feature the following:
 - Local data storage for user credentials using [SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences)
 - Rendering a list using a [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
 - Real networking & JSON parsing for login
+
+# Getting Started
+- Open `workshop-starter` in Android Studio!
+- You can also open `workshop-completed` in Android Studio if you'd like to see project after we're finished!
