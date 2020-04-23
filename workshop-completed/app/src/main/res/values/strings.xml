@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Summit Project</string>
+    <string name="welcome">Welcome to Summit!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="summary_title">Hello, %1$s</string>
+    <string name="summary_subtitle">Your recent transactions for Card x%1$s:</string>
+    <string name="transaction_selected">You clicked %1$s!</string>
+</resources>
