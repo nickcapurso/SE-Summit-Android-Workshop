@@ -19,4 +19,4 @@ The resulting app will feature the following:
 - You can also open `workshop-completed` in Android Studio if you'd like to see project after we're finished!
 
 # Step-by-Step Instructions
-See the [Step-by-Step Instructions](instructions/README.md) to for a full written version of the workshop, including code, screenshots, and helpful links!
+See the [Step-by-Step Instructions](instructions/README.md) for a full written version of the workshop, including code, screenshots, and helpful links!
