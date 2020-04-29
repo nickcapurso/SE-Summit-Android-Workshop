@@ -1,5 +1,5 @@
 # Software Engineering Summit - Android Workshop
-Welcome to the code repo for the Android workshop for Capital One's Software Engineering Summit 2018.
+Welcome to the code repo for the Android workshop for Capital One's Software Engineering Summit!
 
 In this workshop, you will learn a basic Android app featuring a login screen which
 leads to an "account summary" screen which displays the user's name and the recent transactions
@@ -17,3 +17,6 @@ The resulting app will feature the following:
 # Getting Started
 - Open `workshop-starter` in Android Studio!
 - You can also open `workshop-completed` in Android Studio if you'd like to see project after we're finished!
+
+# Step-by-Step Instructions
+See the [Step-by-Step Instructions](instructions/README.md) to for a full written version of the workshop, including code, screenshots, and helpful links!
