@@ -15,7 +15,7 @@ The resulting app will feature the following:
 - Real networking & JSON parsing for login
 
 # Getting Started
-- Open `workshop-starter` in Android Studio!
+- Open `workshop-starter` in Android Studio and run the project on a [physical device or emulator](https://developer.android.com/training/basics/firstapp/running-app)!
 - You can also open `workshop-completed` in Android Studio if you'd like to see project after we're finished!
 
 # Step-by-Step Instructions
