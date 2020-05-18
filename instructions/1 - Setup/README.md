@@ -29,7 +29,7 @@ reflects the same file layout as they are on disk.
 
 I'd also recommend enabling auto-imports, which will automatically add the `import ...`
 lines at the top of your code files as you write code.
-- Open the `Preferences` -> `Editor -> General -> Auto-Import`
+- Open the `Preferences` (`Settings` on Windows) -> `Editor -> General -> Auto-Import`
   - Enable `Add unambiguous imports...` and `Optimize imports...`
 <img src="ide-preferences.png" width="800">
 
