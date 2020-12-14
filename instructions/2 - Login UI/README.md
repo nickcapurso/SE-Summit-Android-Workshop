@@ -26,6 +26,7 @@ for an Android app goes under `app/src/main/res/`, this includes XML layout file
 <img src="login-initial.png" width="800">
 
 If they are not showing, you can enable the previews for the bottom bar and the top app bar by clicking the eye icon and enabling `Layout Decorations`.
+- **In newer versions of Android Studio**, this option has been renamed to `Show System UI`.
 
 <img src="login-layout-decorations.png" width="400">
 
